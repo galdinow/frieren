@@ -4,16 +4,18 @@
         int def;
         int level;
     };
+    typedef struct characters ch;
 
-    void status_party(charac, ch frieren, ch warrior, ch heiter){
+    void status_party(int *charac, ch frieren, ch warrior, ch heiter){
 
         if(frieren.hp <=0){
-            charac -1;
+            *charac --;
         }
         if(warrior.hp <=0){
-            charac -1;
+           *charac --;
         }
         if(heiter.hp <=0){
-            charac -1;
+            *charac --;
         }
+        return charac;
     }
