@@ -7,9 +7,9 @@ struct characters{
     int atk;
     int def;
     int level;
-    char attack1[10];
-    char attack2[10];
-    char attack3[10];
+    char attack1[20];
+    char attack2[20];
+    char attack3[20];
 };
 typedef struct characters ch;
 
@@ -23,9 +23,11 @@ struct bag{
 typedef struct bag bg;
 // status_party(int  *charac, ch frieren, ch warrior, ch heiter);
 
-int menu(ch *x, int y);
+int menu(ch *x, ch *y);
 int menu_attack(ch *x, int cont);
-void menu_party(ch *x, ch *y,ch *z, ch *w);
+int  menu_party(ch *x, ch *y,ch *z, ch *w);
+void kings_turn(int rn_party, int rn_attack, ch *frieren, ch * himmel, ch *heiter, ch *eisen, ch *king_demon);
+int members(ch *frieren, ch *himmel,ch * heiter,ch *eisen );
 // void menu_bag(ch *x);
 
 #endif
