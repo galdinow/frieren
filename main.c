@@ -57,7 +57,7 @@ int main(){
         }
         //verifica quantos aliados estao vivos
         if(members(&frieren,&himmel,&heiter,&eisen) == 0){
-            return 0;
+            printf("voce falhou!!");
         }
 
         escolha = menu(characters[cont],&king_demon);
