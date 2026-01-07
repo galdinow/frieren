@@ -1,6 +1,4 @@
-#include <stdio.h>
 #include "functions.h"
-
 
 // void status_party(int *charac, ch frieren, ch warrior, ch heiter){
 
@@ -32,7 +30,7 @@ int menu(ch *x, ch *y){
     return escolha;
 }
 
-int menu_attack(ch *x, int cont){
+int menu_attack(character *x, int cont){
     int escolha;
     printf("  ---------------------------------------------------------------------------\n");
     printf("   | %s- hp: %d\\%d                         next character:           |\n", x->name,x->hp,x->total_hp);
