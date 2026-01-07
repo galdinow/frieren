@@ -1,5 +1,6 @@
-#ifndef functions
-#define functions
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
+#include <stdbool.h>
 typedef struct{
     char name[10];
     int hp;
@@ -7,6 +8,7 @@ typedef struct{
     int atk;
     int def;
     int level;
+    bool alive;
 } character;
 
 typedef struct{
@@ -20,11 +22,9 @@ typedef struct{
 } bag;
 // status_party(int  *charac, ch frieren, ch warrior, ch heiter);
 
-int menu(ch *x, ch *y);
-int menu_attack(ch *x, int cont);
-int  menu_party(ch *x, ch *y,ch *z, ch *w);
-void kings_turn(int rn_party, int rn_attack, ch *frieren, ch * himmel, ch *heiter, ch *eisen, ch *king_demon);
-int members(ch *frieren, ch *himmel,ch * heiter,ch *eisen );
+// colocar array de personagens
+void kings_turn(int rn_party, int rn_attack, character *king_demon);
+bool party_status(character party[], int length);
 
 
 #endif
