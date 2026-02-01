@@ -35,9 +35,10 @@ bool enemy_alive(character enemy)
 }
 
 
-void party_attack(character member, character enemy)
+void player_attack(character member, character enemy)
 {
-
+    // colocar logica para varios ataques
+    enemy.hp -= member.attack_1.damage;
     return;
 }
 
