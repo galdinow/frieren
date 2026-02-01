@@ -13,11 +13,13 @@ typedef struct
     char name[10];
     int hp;
     int total_hp;
+    attack attack_1;
     bool alive;
 } character;
 
 // colocar array de personagens
 void enemy_turn(character party[], int length, character enemy);
+void player_attack(character member, character enemy);
 void update_party(character party[], int length);
 bool party_alive(character party[], int length);
 bool enemy_alive(character enemy);
