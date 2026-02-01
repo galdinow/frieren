@@ -2,15 +2,17 @@
 #include "menu.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
+#include "attack_list.h"
 
 
 // character = name, hp, total_hp, alive
-character frieren = {"Frieren",200,200, true};
-character eisen={"Eisen",500,500, true};
-character heiter={"Heiter",200,200, true};
-character himmel={"Himmel", 300,300, true};
-character demon_king= {"King",1000,1000, true};
+character frieren = {"Frieren",200,200,fireball, true};
+character eisen={"Eisen",500,500,fireball, true};
+character heiter={"Heiter",200,200,fireball, true};
+character himmel={"Himmel", 300,300,fireball, true};
+character demon_king= {"King",1000,1000,fireball, true};
 
 int main()
 {
@@ -37,13 +39,29 @@ int main()
             break;
 
         }
-
+        
         for (int i = 0; i < PARTY_MEMBERS; i++)
         {
-            menu(party, i, demon_king);
+            char *action = menu(party, i, demon_king);
+
+            if (strcmp(action, "attack") == 0)
+            {
+                player_attack(party[i], demon_king);
+            }
+
+            else if (strcmp(action, "bag") == 0)
+            {
+                show_items();
+            }
+
+            else if (strcmp(action, "party") == 0)
+            {
+                show_party();
+            }
+
         }
 
-        kings_turn(party, PARTY_MEMBERS, demon_king);
+        enemy_turn(party, PARTY_MEMBERS, demon_king);
 
     }
 
